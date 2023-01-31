@@ -1,0 +1,11 @@
+Model Information:
+* title:	kettlebell
+* source:	https://sketchfab.com/3d-models/kettlebell-2e09cbcbde964a658d51838e2f9866bb
+* author:	anesbe89 (https://sketchfab.com/anesbe89)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "kettlebell" (https://sketchfab.com/3d-models/kettlebell-2e09cbcbde964a658d51838e2f9866bb) by anesbe89 (https://sketchfab.com/anesbe89) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
