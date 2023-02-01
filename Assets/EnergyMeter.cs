@@ -20,7 +20,7 @@ public class EnergyMeter : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-      
+      // this.gameObject.transform.localScale = new Vector3 (1, .15, .01);
   }
 
   // Update is called once per frame
@@ -32,7 +32,7 @@ public class EnergyMeter : MonoBehaviour
         
       }
 
-      GetComponenet<Transform> ().localScale = new Vector3 ((currEnergy / maxEnergy), 1, 1);
+      this.gameObject.transform.localScale = new Vector3 ((currEnergy / maxEnergy), 15/100, 1/100);
       
   }
 }
