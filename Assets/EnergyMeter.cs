@@ -9,13 +9,11 @@ public class EnergyMeter : MonoBehaviour
   //Energy Values
   public static float maxEnergy = 100;
   public static float currEnergy = 0;
-  
-  // make method for energy decrements
-  
+
   // Energy decrementation constants;
-  public float small = 5.0f;
-  public float medium = 10.0f;
-  public float large = 20.0f;
+  public static float small = 5.0f;
+  public static float medium = 10.0f;
+  public static float large = 20.0f;
 
   // Color and Scale Values
   public Color fullEnergyColor = new Color(0.50f, 0.50f, .83f, .69f);
@@ -23,23 +21,23 @@ public class EnergyMeter : MonoBehaviour
   public Color emptyEnergyColor = new Color(0.92f, 0.14f, .10f, .69f);
   public float yScale = .15f;
   public float zScale = .01f;
-
-  // Initialize Variables for Energy Meter
-  // public GameObject energy = this.gameObject;
-  // public Renderer energyRenderer = energy.GetComponent<Renderer>();
-
-  //change
-  public float totalTime = 0;
+  
+  // Parent and Children
+  private GameObject parent;
+  private GameObject child;
+  
+  
   // Start is called before the first frame update
   void Start()
   {
+    this.parent = this.gameObject;
+    this.child = parent.transform.GetChild(0).gameObject;
+    
     // Initialize Full Energy Meter
-    this.gameObject.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
-    GameObject parent = this.gameObject;
-    GameObject child = parent.transform.GetChild(0).gameObject;
-    var energyRenderer = child.GetComponent<Renderer>();
+    this.parent.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
+    
+    var energyRenderer = this.child.GetComponent<Renderer>();
     energyRenderer.material.SetColor("_Color", fullEnergyColor);
-
   }
 
   // Update is called once per frame
@@ -50,23 +48,28 @@ public class EnergyMeter : MonoBehaviour
       currEnergy = Mathf.Min(currEnergy, maxEnergy);
     }
     
+    // GameObject parent = this.gameObject;
+    // GameObject child = parent.transform.GetChild(0).gameObject;
+    var energyRenderer = this.child.GetComponent<Renderer>();
+    
+    if (currEnergy < 10)
+    {
+      energyRenderer.material.SetColor("_Color", emptyEnergyColor);
+    } else if (currEnergy < 40)
+    {
+      energyRenderer.material.SetColor("_Color", lowEnergyColor);
+    }
+    else
+    {
+      energyRenderer.material.SetColor("_Color", fullEnergyColor);
+    }
     this.gameObject.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
 
 
-      
-      // totalTime += Time.deltaTime;
-      // if (totalTime > .7) {
-      //   currEnergy -= 5;
-        
-      // }
-
-      // energy.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
-      
   }
   
-  public static void(float energyDecrementer)
+  public void decreaseEnergy(float energyDecrementer)
   {
     currEnergy -= energyDecrementer;
-
   }
 }
