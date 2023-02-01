@@ -5,34 +5,48 @@ using UnityEngine;
 public class EnergyMeter : MonoBehaviour
 {
 
-  // public Transform thePlayer;
+  //Energy Values
+  public static float maxEnergy = 100;
+  public static float currEnergy = 100;
+
+  // Energy decrementation constants;
   public Transform small;
   public Transform medium;
   public Transform large;
-  public static float maxEnergy = 100;
-  public static float currEnergy = 100;
-  public float grColor = 0;
-  public float redColor = 0;
-  public float blColor = 1;
+
+  // Color and Scale Values
+  public Color fullEnergyColor = new Color(0.50f, 0.50f, .83f, .69f);
+  public Color lowEnergyColor = new Color(1.0f, 0.82f, .26f, .76f);
+  public Color emptyEnergyColor = new Color(0.92f, 0.14f, .10f, .69f);
+  public float yScale = .15F;
+  public float zScale = .01F;
+
+  // Initialize Variables for Energy Meter
+  // public GameObject energy = this.gameObject;
+  // public Renderer energyRenderer = energy.GetComponent<Renderer>();
 
   //change
   public float totalTime = 0;
   // Start is called before the first frame update
   void Start()
   {
-      // this.gameObject.transform.localScale = new Vector3 (1, .15, .01);
+    // Initialize Full Energy Meter
+    this.gameObject.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
+    var energyRenderer = this.gameObject.GetComponent<Renderer>();
+    energyRenderer.material.SetColor("_Color", lowEnergyColor);
+
   }
 
   // Update is called once per frame
-  void Update()
-  {
-      totalTime += Time.deltaTime;
-      if (totalTime > .7) {
-        currEnergy -= 5;
+  // void Update()
+  // {
+  //     totalTime += Time.deltaTime;
+  //     if (totalTime > .7) {
+  //       currEnergy -= 5;
         
-      }
+  //     }
 
-      this.gameObject.transform.localScale = new Vector3 ((currEnergy / maxEnergy), 15/100, 1/100);
+  //     energy.transform.localScale = new Vector3 ((currEnergy / maxEnergy), yScale, zScale);
       
-  }
+  // }
 }
