@@ -1,0 +1,11 @@
+Model Information:
+* title:	Boulder
+* source:	https://sketchfab.com/3d-models/boulder-5ae77056a492492c8d721a06ff87fee4
+* author:	Marmatti (https://sketchfab.com/maria.maksimainen)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Boulder" (https://sketchfab.com/3d-models/boulder-5ae77056a492492c8d721a06ff87fee4) by Marmatti (https://sketchfab.com/maria.maksimainen) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
