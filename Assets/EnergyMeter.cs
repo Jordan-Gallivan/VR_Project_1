@@ -8,7 +8,7 @@ public class EnergyMeter : MonoBehaviour
 
   //Energy Values
   public static float maxEnergy = 100;
-  public static float currEnergy = 0;
+  public float currEnergy = 0;
 
   // Energy decrementation constants;
   public static float small = 5.0f;
@@ -16,11 +16,11 @@ public class EnergyMeter : MonoBehaviour
   public static float large = 20.0f;
 
   // Color and Scale Values
-  public Color fullEnergyColor = new Color(0.50f, 0.50f, .83f, .69f);
-  public Color lowEnergyColor = new Color(1.0f, 0.82f, .26f, .76f);
-  public Color emptyEnergyColor = new Color(0.92f, 0.14f, .10f, .69f);
-  public float yScale = .15f;
-  public float zScale = .01f;
+  private Color fullEnergyColor = new Color(0.50f, 0.50f, .83f, .69f);
+  private Color lowEnergyColor = new Color(1.0f, 0.82f, .26f, .76f);
+  private Color emptyEnergyColor = new Color(0.92f, 0.14f, .10f, .69f);
+  private float yScale = .15f;
+  private float zScale = .01f;
   
   // Parent and Children
   private GameObject parent;
