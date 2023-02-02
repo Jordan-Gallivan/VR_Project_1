@@ -18,7 +18,8 @@ public class UnibeamBehavior : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            em.decreaseEnergy(EnergyMeter.large);
+           // print(em.currEnergy);
+			em.decreaseEnergy(EnergyMeter.large);
         }
     }
 }

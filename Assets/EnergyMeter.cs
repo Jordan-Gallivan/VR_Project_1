@@ -70,6 +70,6 @@ public class EnergyMeter : MonoBehaviour
   
   public void decreaseEnergy(float energyDecrementer)
   {
-    currEnergy -= energyDecrementer;
+    currEnergy = Mathf.Max(0, currEnergy - energyDecrementer);
   }
 }
