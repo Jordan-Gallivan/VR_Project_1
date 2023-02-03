@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pulse : MonoBehaviour
+public class Pulse : Weapons
 {
     public float energyUsage;
     
@@ -18,8 +18,8 @@ public class Pulse : MonoBehaviour
         // add code here
     }
 
-    public void useWeapon()
+    public override float useWeapon()
     {
-        
+        return this.energyUsage;
     }
 }

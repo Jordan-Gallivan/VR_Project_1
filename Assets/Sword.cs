@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : MonoBehaviour
+public class Sword : Weapons
 {
     public float energyUsage;
     
     // Start is called before the first frame update
     void Start()
     {
-        this.energyUsage = 0;
+        this.energyUsage = 0f;
     }
 
     // Update is called once per frame
@@ -18,8 +18,9 @@ public class Sword : MonoBehaviour
         // add code here
     }
 
-    public void useWeapon()
+    public override float useWeapon()
     {
         // add code here
+        return this.energyUsage;
     }
 }

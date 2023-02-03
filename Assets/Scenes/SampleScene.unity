@@ -1676,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Energy_Container
       objectReference: {fileID: 0}
+    - target: {fileID: 6937842905084010088, guid: 427eb92c7a28b421e967c3ab0fa9a753, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427eb92c7a28b421e967c3ab0fa9a753, type: 3}
 --- !u!4 &1305902800788082744
