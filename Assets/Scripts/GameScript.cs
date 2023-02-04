@@ -10,6 +10,7 @@ public class GameScript : MonoBehaviour
     private Unibeam uni;
     private Sword sword;
     private int currWeapon;
+    private Weapons[] weapons;
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class GameScript : MonoBehaviour
         this.uni = GameObject.Find("Unibeam").GetComponent<Unibeam>();
         this.sword = GameObject.Find("Sword").GetComponent<Sword>();
 
-        this.weapons = new Object[4];
+        this.weapons = new Weapons[4];
         this.weapons[0] = str;
         this.weapons[1] = pulse;
         this.weapons[2] = uni;
@@ -31,7 +32,7 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD:Assets/Scripts/GameScript.cs
+// <<<<<<< HEAD:Assets/Scripts/GameScript.cs
         if(Input.GetKey(KeyCode.F))
         {
             //weapons[0].useWeapon();
@@ -52,7 +53,7 @@ public class GameScript : MonoBehaviour
         {
              
         }
-=======
+// =======
         // these need to be updated based on the directions on the hand controller, 
         // currently just keys on the keyboard
         if (Input.GetKeyDown("a")) this.currWeapon = 0;
@@ -67,6 +68,6 @@ public class GameScript : MonoBehaviour
             this.em.decreaseEnergy(energyUsed);
         }
         
->>>>>>> 9a3b6a58fb696c003e6d71d4653ade7c83d6016e:Assets/GameScript.cs
+// >>>>>>> 9a3b6a58fb696c003e6d71d4653ade7c83d6016e:Assets/GameScript.cs
     }
 }
