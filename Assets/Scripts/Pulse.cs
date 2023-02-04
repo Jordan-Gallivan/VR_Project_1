@@ -20,6 +20,7 @@ public class Pulse : Weapons
 
     public override float useWeapon()
     {
+        print("Pulse works");
         return this.energyUsage;
     }
 }

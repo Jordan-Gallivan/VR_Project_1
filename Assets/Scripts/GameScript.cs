@@ -27,47 +27,30 @@ public class GameScript : MonoBehaviour
         this.weapons[2] = uni;
         this.weapons[3] = sword;
 
+        this.currWeapon = 0;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-// <<<<<<< HEAD:Assets/Scripts/GameScript.cs
-        if(Input.GetKey(KeyCode.F))
-        {
-            //weapons[0].useWeapon();
-        }
-        else if(Input.GetKey(KeyCode.G))
-        {
-            //weapons[1].useWeapon();
-        }
-        else if( Input.GetKey(KeyCode.H))
-        {
-            //weapons[2].useWeapon();
-        }
-        else if(Input.GetKey(KeyCode.J))
-        {
-            //weapons[3].useWeapon();
-        }
-        else
-        {
-             
-        }
-// =======
+
         // these need to be updated based on the directions on the hand controller, 
         // currently just keys on the keyboard
-        if (Input.GetKeyDown("a")) this.currWeapon = 0;
-        if (Input.GetKeyDown("s")) this.currWeapon = 1;
-        if (Input.GetKeyDown("d")) this.currWeapon = 2;
-        if (Input.GetKeyDown("f")) this.currWeapon = 3;
+        if (Input.GetKey(KeyCode.F)) this.currWeapon = 0;
+        else if (Input.GetKey(KeyCode.G)) this.currWeapon = 1;
+        else if (Input.GetKey(KeyCode.H)) this.currWeapon = 2;
+        else if (Input.GetKey(KeyCode.J)) this.currWeapon = 3;
         
         // this needs to be changed to the trigger
-        while (Input.GetKeyDown("space"))
+        else if (Input.GetKeyDown("space"))
         {
-            float energyUsed = this.weapons[this.currWeapon].useWeapon();
-            this.em.decreaseEnergy(energyUsed);
+            // i cant get the method call to another script to work.  please tinker with this part of the script
+            // and see what you can do to make this work.
+            print(this.sword.energyUsage);
+            float energyUsed = this.weapons[currWeapon].useWeapon();
+
         }
-        
-// >>>>>>> 9a3b6a58fb696c003e6d71d4653ade7c83d6016e:Assets/GameScript.cs
+
     }
 }

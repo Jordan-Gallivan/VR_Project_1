@@ -20,7 +20,7 @@ public class Strength : Weapons
 
     public override float useWeapon()
     {
-        // add code here
+        print("Strength works");
         return this.energyUsage;
     }
 }

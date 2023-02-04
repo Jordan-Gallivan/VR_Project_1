@@ -20,7 +20,7 @@ public class Unibeam : Weapons
 
     public override float useWeapon()
     {
-        // add code here
+        print("Unibeam works");
         return this.energyUsage;
     }
 }
