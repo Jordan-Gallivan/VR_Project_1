@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Strength : MonoBehaviour
+public class Strength : Weapons
 {
     public float energyUsage;
     
@@ -18,8 +18,9 @@ public class Strength : MonoBehaviour
         // add code here
     }
 
-    public void useWeapon()
+    public override float useWeapon()
     {
         // add code here
+        return this.energyUsage;
     }
 }

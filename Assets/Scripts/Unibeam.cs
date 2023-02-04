@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unibeam : MonoBehaviour
+public class Unibeam : Weapons
 {
     public float energyUsage;
     
@@ -18,8 +18,9 @@ public class Unibeam : MonoBehaviour
         // add code here
     }
 
-    public void useWeapon()
+    public override float useWeapon()
     {
         // add code here
+        return this.energyUsage;
     }
 }

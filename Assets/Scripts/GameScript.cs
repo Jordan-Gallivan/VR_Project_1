@@ -9,7 +9,6 @@ public class GameScript : MonoBehaviour
     private Strength str;
     private Unibeam uni;
     private Sword sword;
-    private Object[] weapons;
     private int currWeapon;
     
     // Start is called before the first frame update
@@ -32,6 +31,7 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD:Assets/Scripts/GameScript.cs
         if(Input.GetKey(KeyCode.F))
         {
             //weapons[0].useWeapon();
@@ -52,5 +52,21 @@ public class GameScript : MonoBehaviour
         {
              
         }
+=======
+        // these need to be updated based on the directions on the hand controller, 
+        // currently just keys on the keyboard
+        if (Input.GetKeyDown("a")) this.currWeapon = 0;
+        if (Input.GetKeyDown("s")) this.currWeapon = 1;
+        if (Input.GetKeyDown("d")) this.currWeapon = 2;
+        if (Input.GetKeyDown("f")) this.currWeapon = 3;
+        
+        // this needs to be changed to the trigger
+        while (Input.GetKeyDown("space"))
+        {
+            float energyUsed = this.weapons[this.currWeapon].useWeapon();
+            this.em.decreaseEnergy(energyUsed);
+        }
+        
+>>>>>>> 9a3b6a58fb696c003e6d71d4653ade7c83d6016e:Assets/GameScript.cs
     }
 }
