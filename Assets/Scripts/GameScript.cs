@@ -9,9 +9,9 @@ public class GameScript : MonoBehaviour
     private Strength str;
     private Unibeam uni;
     private Sword sword;
-    private Weapons[] weapons;
     private int currWeapon;
-    public GameManager manager;
+    private Weapons[] weapons;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,53 +27,30 @@ public class GameScript : MonoBehaviour
         this.weapons[2] = uni;
         this.weapons[3] = sword;
 
+        this.currWeapon = 0;
 
-        
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-
-        if(Input.GetKey(KeyCode.F))
-        {
-            //Debug.Log("The key F was pressed"); 
-            GameObject ammo = Instantiate(GameManager.instance.ammoPrefab, transform.position, Quaternion.identity) as GameObject;
-            ammo.GetComponent<Rigidbody>().AddForce(transform.forward * 100f, ForceMode.Impulse);
-
-
-        }
-        else if(Input.GetKey(KeyCode.G))
-        {
-            //weapons[1].useWeapon();
-        }
-        else if( Input.GetKey(KeyCode.H))
-        {
-            //weapons[2].useWeapon();
-        }
-        else if(Input.GetKey(KeyCode.J))
-        {
-            //weapons[3].useWeapon();
-        }
-        else
-        {
-             
-        }
 
         // these need to be updated based on the directions on the hand controller, 
         // currently just keys on the keyboard
-        if (Input.GetKeyDown("a")) this.currWeapon = 0;
-        if (Input.GetKeyDown("s")) this.currWeapon = 1;
-        if (Input.GetKeyDown("d")) this.currWeapon = 2;
-        if (Input.GetKeyDown("f")) this.currWeapon = 3;
+        if (Input.GetKey(KeyCode.F)) this.currWeapon = 0;
+        else if (Input.GetKey(KeyCode.G)) this.currWeapon = 1;
+        else if (Input.GetKey(KeyCode.H)) this.currWeapon = 2;
+        else if (Input.GetKey(KeyCode.J)) this.currWeapon = 3;
         
         // this needs to be changed to the trigger
-        while (Input.GetKeyDown("space"))
+        else if (Input.GetKeyDown("space"))
         {
-            //float energyUsed = this.weapons[this.currWeapon].useWeapon();
-            //this.em.decreaseEnergy(energyUsed);
+            // i cant get the method call to another script to work.  please tinker with this part of the script
+            // and see what you can do to make this work.
+            print(this.sword.energyUsage);
+            float energyUsed = this.weapons[currWeapon].useWeapon();
+
         }
-        
 
     }
 }
