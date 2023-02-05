@@ -9,8 +9,9 @@ public class GameScript : MonoBehaviour
     private Strength str;
     private Unibeam uni;
     private Sword sword;
+    private Weapons[] weapons;
     private int currWeapon;
-    
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +21,27 @@ public class GameScript : MonoBehaviour
         this.uni = GameObject.Find("Unibeam").GetComponent<Unibeam>();
         this.sword = GameObject.Find("Sword").GetComponent<Sword>();
 
-        this.weapons = new Object[4];
+        this.weapons = new Weapons[4];
         this.weapons[0] = str;
         this.weapons[1] = pulse;
         this.weapons[2] = uni;
         this.weapons[3] = sword;
 
+
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-<<<<<<< HEAD:Assets/Scripts/GameScript.cs
+
         if(Input.GetKey(KeyCode.F))
         {
-            //weapons[0].useWeapon();
+            //Debug.Log("The key F was pressed"); 
+            GameObject ammo = Instantiate(GameManager.instance.ammoPrefab, transform.position, Quaternion.identity) as GameObject;
+            ammo.GetComponent<Rigidbody>().AddForce(transform.forward * 100f, ForceMode.Impulse);
+
+
         }
         else if(Input.GetKey(KeyCode.G))
         {
@@ -52,7 +59,7 @@ public class GameScript : MonoBehaviour
         {
              
         }
-=======
+
         // these need to be updated based on the directions on the hand controller, 
         // currently just keys on the keyboard
         if (Input.GetKeyDown("a")) this.currWeapon = 0;
@@ -63,10 +70,10 @@ public class GameScript : MonoBehaviour
         // this needs to be changed to the trigger
         while (Input.GetKeyDown("space"))
         {
-            float energyUsed = this.weapons[this.currWeapon].useWeapon();
-            this.em.decreaseEnergy(energyUsed);
+            //float energyUsed = this.weapons[this.currWeapon].useWeapon();
+            //this.em.decreaseEnergy(energyUsed);
         }
         
->>>>>>> 9a3b6a58fb696c003e6d71d4653ade7c83d6016e:Assets/GameScript.cs
+
     }
 }
