@@ -152,6 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4c0fd8936d6418cbd416b0a4fc1847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  em: {fileID: 0}
+  pulseObj: {fileID: 307427778}
+  strObj: {fileID: 2090224044}
+  uniObj: {fileID: 332436253}
+  swordObj: {fileID: 2034669257}
 --- !u!4 &79152996
 Transform:
   m_ObjectHideFlags: 0

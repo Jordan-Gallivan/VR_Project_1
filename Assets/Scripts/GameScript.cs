@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameScript : MonoBehaviour
 {
-    private EnergyMeter em;
+    public EnergyMeter em;
+    public GameObject pulseObj;
+    public GameObject strObj;
+    public GameObject uniObj;
+    public GameObject swordObj;
     private Pulse pulse;
     private Strength str;
     private Unibeam uni;
@@ -16,10 +20,12 @@ public class GameScript : MonoBehaviour
     void Start()
     {
         this.em = GameObject.Find("EnergyContainer").GetComponent<EnergyMeter>();
-        this.pulse = GameObject.Find("Pulsar").GetComponent<Pulse>();
-        this.str = GameObject.Find("Strength").GetComponent<Strength>();
-        this.uni = GameObject.Find("Unibeam").GetComponent<Unibeam>();
-        this.sword = GameObject.Find("Sword").GetComponent<Sword>();
+        GameObject test = GameObject.Find("PulsarContainer");
+        this.pulse = swordObj.GetComponent<Pulse>();
+        this.str = strObj.GetComponent<Strength>();
+        this.uni = uniObj.GetComponent<Unibeam>();
+        this.sword = swordObj.GetComponent<Sword>();
+        
 
         this.weapons = new Weapons[4];
         this.weapons[0] = str;
@@ -37,10 +43,10 @@ public class GameScript : MonoBehaviour
 
         // these need to be updated based on the directions on the hand controller, 
         // currently just keys on the keyboard
-        if (Input.GetKey(KeyCode.F)) this.currWeapon = 0;
-        else if (Input.GetKey(KeyCode.G)) this.currWeapon = 1;
-        else if (Input.GetKey(KeyCode.H)) this.currWeapon = 2;
-        else if (Input.GetKey(KeyCode.J)) this.currWeapon = 3;
+        if (Input.GetKeyDown(KeyCode.F)) this.currWeapon = 0;
+        else if (Input.GetKeyDown(KeyCode.G)) this.currWeapon = 1;
+        else if (Input.GetKeyDown(KeyCode.H)) this.currWeapon = 2;
+        else if (Input.GetKeyDown(KeyCode.J)) this.currWeapon = 3;
         
         // this needs to be changed to the trigger
         else if (Input.GetKeyDown("space"))
