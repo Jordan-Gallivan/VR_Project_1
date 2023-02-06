@@ -23,4 +23,13 @@ public class Pulse : Weapons
         print("Pulse works");
         return this.energyUsage;
     }
+    public override void secureWeapon()
+    {
+        print("weapon secured");
+        return;
+    }
+    public override string weaponName()
+    {
+        return "Pulse";
+    }
 }

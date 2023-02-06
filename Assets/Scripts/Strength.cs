@@ -23,4 +23,13 @@ public class Strength : Weapons
         print("Strength works");
         return this.energyUsage;
     }
+    public override void secureWeapon()
+    {
+        print("weapon secured");
+        return;
+    }
+    public override string weaponName()
+    {
+        return "Strength";
+    }
 }

@@ -23,6 +23,15 @@ public class Sword : Weapons
         print("Sword works");
         return this.energyUsage;
     }
+    public override void secureWeapon()
+    {
+        print("weapon secured");
+        return;
+    }
+    public override string weaponName()
+    {
+        return "Sword";
+    }
 
 
 }
