@@ -31,7 +31,7 @@ public class GameScript : MonoBehaviour
         this.sword = swordObj.GetComponent<Sword>();
         this.nano = nanoObj.GetComponent<Nano>();
         
-        this.weapons = new Weapons[5];
+        this.weapons = new Weapons[5]; //debug stop
         this.weapons[0] = str;
         this.weapons[1] = pulse;
         this.weapons[2] = uni;
@@ -39,6 +39,8 @@ public class GameScript : MonoBehaviour
         this.weapons[4] = nano;
 
         this.currWeapon = 0;
+
+        _controller = GetComponent<SteamVR_TrackedController>
 
     }
 
@@ -54,6 +56,7 @@ public class GameScript : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.J)) this.currWeapon = 3;
         
         // Single Button push iterates through weapons
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             this.currWeapon++;

@@ -14,22 +14,14 @@ namespace Valve.VR
     using UnityEngine;
     
     
-    public class SteamVR_Input_ActionSet_Dfault : Valve.VR.SteamVR_ActionSet
+    public class SteamVR_Input_ActionSet_Testing : Valve.VR.SteamVR_ActionSet
     {
         
-        public virtual SteamVR_Action_Vector2 TouchpadTouch
+        public virtual SteamVR_Action_Boolean test
         {
             get
             {
-                return SteamVR_Actions.dfault_TouchpadTouch;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean NewAction
-        {
-            get
-            {
-                return SteamVR_Actions.dfault_NewAction;
+                return SteamVR_Actions.testing_test;
             }
         }
     }
