@@ -46,7 +46,7 @@ public class GameScript : MonoBehaviour
         // Initialize current weapon to strength
         this.currWeapon = 0;
 
-        _controller = GetComponent<SteamVR_TrackedController>
+        // _controller = GetComponent<SteamVR_TrackedController>;
 
     }
 
