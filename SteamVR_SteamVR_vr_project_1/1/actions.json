@@ -1,0 +1,15 @@
+{
+  "actions": [],
+  "action_sets": [
+    {
+      "name": "/actions/Dfault",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/NewSet",
+      "usage": "single"
+    }
+  ],
+  "default_bindings": [],
+  "localization": []
+}

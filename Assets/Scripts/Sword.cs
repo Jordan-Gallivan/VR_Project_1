@@ -33,5 +33,10 @@ public class Sword : Weapons
         return "Sword";
     }
 
+    public void DoUseWeapon()
+    {
+        Debug.Log("Sword Worked");
+        useWeapon();
+    }
 
 }

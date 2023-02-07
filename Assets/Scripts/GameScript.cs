@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameScript : MonoBehaviour
 {
     // Game Object Assignment
-    public EnergyMeter em;
+    public GameObject energy;
     public GameObject pulseObj;
     public GameObject strObj;
     public GameObject uniObj;
@@ -20,6 +20,7 @@ public class GameScript : MonoBehaviour
     private Unibeam uni;
     private Sword sword;
     private Nano nano;
+    private EnergyMeter em;
     
     // Current Weapons array
     private int currWeapon;
@@ -29,7 +30,7 @@ public class GameScript : MonoBehaviour
     void Start()
     {
         // Pull Scripts from the respective game objects
-        this.em = GameObject.Find("EnergyContainer").GetComponent<EnergyMeter>();
+        this.em = energy.GetComponent<EnergyMeter>();
         this.pulse = pulseObj.GetComponent<Pulse>();
         this.str = strObj.GetComponent<Strength>();
         this.uni = uniObj.GetComponent<Unibeam>();
