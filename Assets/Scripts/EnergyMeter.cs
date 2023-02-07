@@ -52,6 +52,7 @@ public class EnergyMeter : MonoBehaviour
     // GameObject child = parent.transform.GetChild(0).gameObject;
     var energyRenderer = this.child.GetComponent<Renderer>();
     
+    // Colorize energy meter based on remaining energy
     if (currEnergy < 10)
     {
       energyRenderer.material.SetColor("_Color", emptyEnergyColor);
