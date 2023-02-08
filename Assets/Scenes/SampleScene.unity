@@ -641,9 +641,9 @@ MonoBehaviour:
   onPressDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2034669258}
-        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
-        m_MethodName: DoUseWeapon
+      - m_Target: {fileID: 79152995}
+        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
+        m_MethodName: arrayIterate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
