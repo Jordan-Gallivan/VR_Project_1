@@ -55,56 +55,58 @@ public class GameScript : MonoBehaviour
     void Update()
     {
         // Single Button push iterates through weapons
-        
-        if (Input.GetKeyDown(KeyCode.F))
-        {
+
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
             // increment current weapon until end of array
             // reset to 0 when size of array reached
-            this.currWeapon++;
-            if (this.currWeapon > 4) this.currWeapon = 0;
-            
+            //this.currWeapon++;
+            //if (this.currWeapon > 4) this.currWeapon = 0;
+
             // display current weapon on HUD
-            this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
-        }
-        
-        if (Input.GetKeyDown("space"))
-        {
-            // Use current Weapon
-            float energyUsed = this.weapons[currWeapon].useWeapon();
-            
-            this.em.decreaseEnergy(energyUsed); // update energy 
+            //this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
+        //}
 
-        }
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    // Use current Weapon
+        //    float energyUsed = this.weapons[currWeapon].useWeapon();
 
-        if (Input.GetKeyUp("space"))
-        {
-            this.weapons[currWeapon].secureWeapon(); // terminate weapon use
-        }
+        //    this.em.decreaseEnergy(energyUsed); // update energy 
+
+        //}
+
+        //if (Input.GetKeyUp("space"))
+        //{
+        //    this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+        //}
 
     }
 
-    // public void arrayIterate()
-    // {
-    //     this.currWeapon++;
-    //     if (this.currWeapon > 4) this.currWeapon = 0;
-    //         
-    //     // display current weapon on HUD
-    //     this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
-    // }
+    public void arrayiterate()
+    {
+        Debug.Log("Array is being iterated");
+        this.currWeapon++;
+        if (this.currWeapon > 4) this.currWeapon = 0;
 
-    
-    
-    // public void useWeapon()
-    // {
-    //     float energyUsed = this.weapons[currWeapon].useWeapon();
-    //         
-    //     this.em.decreaseEnergy(energyUsed); // update energy 
-    // }
+        // display current weapon on HUD
+        this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
+        
+    }
 
 
-    // public void terminateWeapon()
-    // {
-    // this.weapons[currWeapon].secureWeapon(); // terminate weapon use
-    // }
-    
+
+    public void useweapon()
+    {
+        float energyUsed = this.weapons[currWeapon].useWeapon();
+
+        this.em.decreaseEnergy(energyUsed); // update energy 
+    }
+
+
+    public void terminateweapon()
+    {
+        this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+    }
+
 }
