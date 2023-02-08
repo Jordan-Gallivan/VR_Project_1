@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -158,7 +158,9 @@ MonoBehaviour:
   uniObj: {fileID: 1455382155}
   swordObj: {fileID: 252941598}
   nanoObj: {fileID: 990979398}
+  hand: {fileID: 492790563}
   weaponDisplay: {fileID: 1269984106}
+  naniteColor: {r: 0.062032763, g: 0.062032763, b: 0.7735849, a: 0.69}
 --- !u!4 &79152996
 Transform:
   m_ObjectHideFlags: 0

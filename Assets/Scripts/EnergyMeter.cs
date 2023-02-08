@@ -1,4 +1,6 @@
 // using System;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,5 +74,6 @@ public class EnergyMeter : MonoBehaviour
   public void decreaseEnergy(float energyDecrementer)
   {
     currEnergy = Mathf.Max(0, currEnergy - energyDecrementer);
+    currEnergy = Mathf.Min(100, currEnergy);
   }
 }
