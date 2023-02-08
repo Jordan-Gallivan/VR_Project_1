@@ -28,10 +28,11 @@ public class Unibeam : Weapons
         // this.parent.transform.localScale = new Vector3 (.5f, 0, .4f);
         
         // de-activate mesh renderer and collider
-        var beam = this.child.GetComponent<MeshRenderer>();
-        beam.enabled = false;
-        var collider = this.child.GetComponent<Collider>();
-        collider.enabled = false;
+        // var beam = this.child.GetComponent<MeshRenderer>();
+        // beam.enabled = false;
+        // var collider = this.child.GetComponent<Collider>();
+        // collider.enabled = false;
+        this.parent.SetActive(false);
 
     }
 
@@ -52,10 +53,11 @@ public class Unibeam : Weapons
         // this.parent.transform.localScale = new Vector3 (.5f, 6, .4f);
        
         // activate mesh renderer and collider
-        var beam = this.child.GetComponent<MeshRenderer>();
-        beam.enabled = true;
-        var collider = this.child.GetComponent<Collider>();
-        collider.enabled = true;
+        // var beam = this.child.GetComponent<MeshRenderer>();
+        // beam.enabled = true;
+        // var collider = this.child.GetComponent<Collider>();
+        // collider.enabled = true;
+        this.parent.SetActive(true);
 
         return this.energyUsage;
     }
@@ -65,10 +67,11 @@ public class Unibeam : Weapons
         print("weapon secured");
         
         // de-activate mesh renderer and collider
-        var beam = this.child.GetComponent<MeshRenderer>();
-        beam.enabled = false;
-        var collider = this.child.GetComponent<Collider>();
-        collider.enabled = false;
+        // var beam = this.child.GetComponent<MeshRenderer>();
+        // beam.enabled = false;
+        // var collider = this.child.GetComponent<Collider>();
+        // collider.enabled = false;
+        this.parent.SetActive(false);
         return;
     }
     /**

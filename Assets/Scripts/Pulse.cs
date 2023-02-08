@@ -5,11 +5,13 @@ using UnityEngine;
 public class Pulse : Weapons
 {
     public float energyUsage;
+    public GameObject pulseHand;
     
     // Start is called before the first frame update
     void Start()
     {
         this.energyUsage = EnergyMeter.small;
+        this.pulseHand.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,12 +22,12 @@ public class Pulse : Weapons
 
     public override float useWeapon()
     {
-        print("Pulse works");
+        this.pulseHand.SetActive(true);
         return this.energyUsage;
     }
     public override void secureWeapon()
     {
-        print("weapon secured");
+        this.pulseHand.SetActive(false);
         return;
     }
     public override string weaponName()

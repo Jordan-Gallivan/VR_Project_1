@@ -83,28 +83,28 @@ public class GameScript : MonoBehaviour
 
     }
 
-    //public void arrayIterate()
-    //{
-    //    this.currWeapon++;
-    //    if (this.currWeapon > 4) this.currWeapon = 0;
-            
-        // display current weapon on HUD
-    //    this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
-    //}
+    // public void arrayIterate()
+    // {
+    //     this.currWeapon++;
+    //     if (this.currWeapon > 4) this.currWeapon = 0;
+    //         
+    //     // display current weapon on HUD
+    //     this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
+    // }
 
     
     
-    //public void useWeapon()
-    //{
-    //    float energyUsed = this.weapons[currWeapon].useWeapon();
-            
-    //    this.em.decreaseEnergy(energyUsed); // update energy 
-    //}
+    // public void useWeapon()
+    // {
+    //     float energyUsed = this.weapons[currWeapon].useWeapon();
+    //         
+    //     this.em.decreaseEnergy(energyUsed); // update energy 
+    // }
 
 
-    //public void terminateWeapon()
-    //{
-    //this.weapons[currWeapon].secureWeapon(); // terminate weapon use
-    //}
+    // public void terminateWeapon()
+    // {
+    // this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+    // }
     
 }
