@@ -33,5 +33,12 @@ public class Sword : Weapons
         return "Sword";
     }
 
+    
+    //THIS WAS DR. P's EXAMPLE BELOW
+    //public void DoUseWeapon()
+    //{
+    //    Debug.Log("Sword Worked");
+    //    useWeapon();
+    //}
 
 }
