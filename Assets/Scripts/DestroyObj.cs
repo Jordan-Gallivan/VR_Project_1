@@ -10,7 +10,8 @@ public class DestroyObj : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("destroyable"))
         {
-            Destroy(collision.gameObject);
+            GameObject tgt = collision.gameObject;
+            tgt.SetActive(false);
         }
         
     }
