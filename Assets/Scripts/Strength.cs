@@ -5,11 +5,16 @@ using UnityEngine;
 public class Strength : Weapons
 {
     public float energyUsage;
+    //public float mass;
+    //public Rigidbody rb;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         this.energyUsage = EnergyMeter.medium;
+        //rb = GetComponent<Rigidbody>();
+        //rb.mass = mass;
     }
 
     // Update is called once per frame
