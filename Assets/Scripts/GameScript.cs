@@ -44,7 +44,7 @@ public class GameScript : MonoBehaviour
         // this.handColor = handRenderer.material.GetColor("_Color");
         
         // initialize nanite timer
-        startTime = Time.time;
+        // startTime = Time.time;
         healingAlert.SetActive(false);
         
         this.weapons = new Weapons[5]; 
@@ -67,7 +67,7 @@ public class GameScript : MonoBehaviour
         //     var handRenderer = this.hand.GetComponent<Renderer>();
         //     handRenderer.material.SetColor("Color", this.handColor);
         // }
-        
+
         ///////////////////////////////////////////////////////////////////
         ///                    KeyBoard Inputs                          ///
         ///////////////////////////////////////////////////////////////////
@@ -81,30 +81,31 @@ public class GameScript : MonoBehaviour
 
             // display current weapon on HUD
             //this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
-        //}
+            //}
 
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    // Use current Weapon
-        //    float energyUsed = this.weapons[currWeapon].useWeapon();
+            //if (Input.GetKeyDown("space"))
+            //{
+            //    // Use current Weapon
+            //    float energyUsed = this.weapons[currWeapon].useWeapon();
 
-        //    this.em.decreaseEnergy(energyUsed); // update energy 
+            //    this.em.decreaseEnergy(energyUsed); // update energy 
 
-        //}
+            //}
 
-        if (Input.GetKeyUp("space"))
-        {
-            this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+            if (Input.GetKeyUp("space"))
+            {
+                this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+            }
+            ///////////////////////////////////////////////////////////////////
+            ///                    end KeyBoard Inputs                      ///
+            ///////////////////////////////////////////////////////////////////
+
         }
-        ///////////////////////////////////////////////////////////////////
-        ///                    end KeyBoard Inputs                      ///
-        ///////////////////////////////////////////////////////////////////
-
     }
 
     /**
-     * Iterates through the Weapons Array
-     */
+         * Iterates through the Weapons Array
+         */
     public void arrayiterate()
     {
         //Debug.Log("Array is being iterated");
