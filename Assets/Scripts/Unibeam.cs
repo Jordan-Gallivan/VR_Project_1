@@ -79,7 +79,7 @@ public class Unibeam : Weapons
      */
     public override string weaponName()
     {
-        return "Unibeam";
+        return "UNIBEAM";
     }
     
 

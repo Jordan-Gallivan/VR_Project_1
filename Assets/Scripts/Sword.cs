@@ -32,7 +32,7 @@ public class Sword : Weapons
     }
     public override string weaponName()
     {
-        return "Sword";
+        return "SWORD";
     }
 
     

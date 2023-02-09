@@ -32,6 +32,6 @@ public class Pulse : Weapons
     }
     public override string weaponName()
     {
-        return "Pulse";
+        return "PULSE";
     }
 }

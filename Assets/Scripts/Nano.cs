@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Nano : Weapons
 {
     public float energyUsage;
+    public GameObject healingAlert;
     
     // Start is called before the first frame update
     void Start()
@@ -20,17 +22,17 @@ public class Nano : Weapons
 
     public override float useWeapon()
     {
-        print("Nano works");
+        healingAlert.SetActive(true);
         return this.energyUsage;
     }
     public override void secureWeapon()
     {
-        print("weapon secured");
+        healingAlert.SetActive(false);
         return;
     }
 
     public override string weaponName()
     {
-        return "Nanite Spray";
+        return "NANITE";
     }
 }

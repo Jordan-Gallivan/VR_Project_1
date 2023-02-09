@@ -14,6 +14,7 @@ public class GameScript : MonoBehaviour
     public GameObject swordObj;
     public GameObject nanoObj;
     public GameObject hand;
+    public GameObject healingAlert;
     public TextMeshPro weaponDisplay;
 
     // Script Assignment
@@ -49,13 +50,14 @@ public class GameScript : MonoBehaviour
         this.nano = nanoObj.GetComponent<Nano>();
         
         // get original hand color
-        var handRenderer = this.hand.GetComponent<Renderer>();
-        this.handColor = handRenderer.material.GetColor("_Color");
+        // var handRenderer = this.hand.GetComponent<Renderer>();
+        // this.handColor = handRenderer.material.GetColor("_Color");
         
         // initialize nanite timer
         startTime = Time.time;
-         
-        this.weapons = new Weapons[5]; //debug stop
+        healingAlert.SetActive(false);
+        
+        this.weapons = new Weapons[5]; 
         this.weapons[0] = str;
         this.weapons[1] = pulse;
         this.weapons[2] = uni;
@@ -65,22 +67,21 @@ public class GameScript : MonoBehaviour
         // Initialize current weapon to strength
         this.currWeapon = 0;
 
-        // _controller = GetComponent<SteamVR_TrackedController>;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (naniteActivated && Time.time - startTime > 5)
-        {
-            var handRenderer = this.hand.GetComponent<Renderer>();
-            handRenderer.material.SetColor("Color", this.handColor);
-        }
+        // if (naniteActivated && Time.time - startTime > 5)
+        // {
+        //     var handRenderer = this.hand.GetComponent<Renderer>();
+        //     handRenderer.material.SetColor("Color", this.handColor);
+        // }
         
-        
+        ///////////////////////////////////////////////////////////////////
+        ///                    KeyBoard Inputs                          ///
+        ///////////////////////////////////////////////////////////////////
         // Single Button push iterates through weapons
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             // increment current weapon until end of array
@@ -105,9 +106,15 @@ public class GameScript : MonoBehaviour
         {
             this.weapons[currWeapon].secureWeapon(); // terminate weapon use
         }
+        ///////////////////////////////////////////////////////////////////
+        ///                    end KeyBoard Inputs                      ///
+        ///////////////////////////////////////////////////////////////////
 
     }
 
+    /**
+     * Iterates through the Weapons Array
+     */
     public void arrayiterate()
     {
         Debug.Log("Array is being iterated");
@@ -119,21 +126,25 @@ public class GameScript : MonoBehaviour
         
     }
 
-
-
+    /**
+     * Calls the useWeapon method for selected weapon
+     */
     public void useweapon()
     {
         float energyUsed = this.weapons[currWeapon].useWeapon();
 
         this.em.decreaseEnergy(energyUsed); // update energy 
 
-        if (currWeapon == 4)
-        {
-            var handRenderer = this.hand.GetComponent<Renderer>();
-            handRenderer.material.SetColor("Color", this.naniteColor);
-        }
+        // if (currWeapon == 4)
+        // {
+        //     var handRenderer = this.hand.GetComponent<Renderer>();
+        //     handRenderer.material.SetColor("Color", this.naniteColor);
+        // }
     }
-
+    
+    /*
+     * Calls the secureWeapon method for selected weapon
+     */
 
     public void terminateweapon()
     {

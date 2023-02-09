@@ -30,6 +30,6 @@ public class Strength : Weapons
     }
     public override string weaponName()
     {
-        return "Strength";
+        return "STRENGTH";
     }
 }
