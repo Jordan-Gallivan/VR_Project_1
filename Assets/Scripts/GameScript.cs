@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,7 +15,7 @@ public class GameScript : MonoBehaviour
     public GameObject hand;
     public GameObject healingAlert;
     public TextMeshPro weaponDisplay;
-
+    
     // Script Assignment
     private Pulse pulse;
     private Strength str;
@@ -28,15 +27,6 @@ public class GameScript : MonoBehaviour
     // Current Weapons array
     private int currWeapon;
     private Weapons[] weapons;
-    
-    // Hand Colors
-    private Color handColor;
-    public Color naniteColor = new Color(0.50f, 0.50f, .83f, .69f);
-    
-    // Nanite Variables
-    private Boolean naniteActivated = false;
-    private float startTime;
-    
     
     // Start is called before the first frame update
     void Start()
@@ -86,21 +76,21 @@ public class GameScript : MonoBehaviour
         {
             // increment current weapon until end of array
             // reset to 0 when size of array reached
-            this.currWeapon++;
-            if (this.currWeapon > 4) this.currWeapon = 0;
+            //this.currWeapon++;
+            //if (this.currWeapon > 4) this.currWeapon = 0;
 
             // display current weapon on HUD
-            this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
-        }
+            //this.weaponDisplay.text = this.weapons[currWeapon].weaponName();
+        //}
 
-        if (Input.GetKeyDown("space"))
-        {
-            // Use current Weapon
-            float energyUsed = this.weapons[currWeapon].useWeapon();
+        //if (Input.GetKeyDown("space"))
+        //{
+        //    // Use current Weapon
+        //    float energyUsed = this.weapons[currWeapon].useWeapon();
 
-            this.em.decreaseEnergy(energyUsed); // update energy 
+        //    this.em.decreaseEnergy(energyUsed); // update energy 
 
-        }
+        //}
 
         if (Input.GetKeyUp("space"))
         {
@@ -117,7 +107,7 @@ public class GameScript : MonoBehaviour
      */
     public void arrayiterate()
     {
-        Debug.Log("Array is being iterated");
+        //Debug.Log("Array is being iterated");
         this.currWeapon++;
         if (this.currWeapon > 4) this.currWeapon = 0;
 
