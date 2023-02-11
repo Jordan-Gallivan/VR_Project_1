@@ -6,7 +6,8 @@ public class Pulse : Weapons
 {
     public float energyUsage;
     public GameObject pulseHand;
-    
+
+    public AudioClip pulseSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,9 @@ public class Pulse : Weapons
     {
         this.pulseHand.SetActive(true);
         return this.energyUsage;
+        
+        this.gameObject.GetComponent<AudioSource>().clip = pulseSound;
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
     public override void secureWeapon()
     {

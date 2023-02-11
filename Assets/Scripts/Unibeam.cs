@@ -9,6 +9,7 @@ public class Unibeam : Weapons
     public float energyUsage;
     private GameObject parent;
     private GameObject child;
+    public AudioClip unibeamSound;
 
     // private Ray myRay;
     // private RaycastHit hit;
@@ -60,6 +61,11 @@ public class Unibeam : Weapons
         this.parent.SetActive(true);
 
         return this.energyUsage;
+        
+        //adding sound
+        
+        this.gameObject.GetComponent<AudioSource>().clip = unibeamSound;
+        this.gameObject.GetComponent<AudioSource>().Play();
     }
     public override void secureWeapon()
     {
