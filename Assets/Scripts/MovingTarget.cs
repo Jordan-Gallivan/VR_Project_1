@@ -11,7 +11,8 @@ public class MovingTarget : MonoBehaviour
     public float ySpeed = 0;
     public float zSpeed = 0;
     public Vector3 speed;
-    
+
+    public GameObject deathSmoke;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,22 @@ public class MovingTarget : MonoBehaviour
             zSpeed *= -1;
             startTime = Time.time;
             this.speed = new Vector3(xSpeed, ySpeed, zSpeed);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Equals("Left Pulse"))
+        {
+            GameObject.Instantiate(deathSmoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        }
+        else if(other.name.Equals("Right Pulse"))
+        {
+            GameObject.Instantiate(deathSmoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        }
+        else if(other.name.Equals("Beam"))
+        {
+            GameObject.Instantiate(deathSmoke, this.gameObject.transform.position, this.gameObject.transform.rotation);
         }
     }
 }
