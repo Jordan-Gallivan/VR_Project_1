@@ -72,8 +72,8 @@ public class GameScript : MonoBehaviour
         ///                    KeyBoard Inputs                          ///
         ///////////////////////////////////////////////////////////////////
         // Single Button push iterates through weapons
-        if (Input.GetKeyDown(KeyCode.F))
-        {
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
             // increment current weapon until end of array
             // reset to 0 when size of array reached
             //this.currWeapon++;
@@ -92,15 +92,15 @@ public class GameScript : MonoBehaviour
 
             //}
 
-            if (Input.GetKeyUp("space"))
-            {
-                this.weapons[currWeapon].secureWeapon(); // terminate weapon use
-            }
+            //if (Input.GetKeyUp("space"))
+            //{
+                //this.weapons[currWeapon].secureWeapon(); // terminate weapon use
+           //}
             ///////////////////////////////////////////////////////////////////
             ///                    end KeyBoard Inputs                      ///
             ///////////////////////////////////////////////////////////////////
 
-        }
+        //}
     }
 
     /**
@@ -108,7 +108,7 @@ public class GameScript : MonoBehaviour
          */
     public void arrayiterate()
     {
-        //Debug.Log("Array is being iterated");
+        Debug.Log("Array is being iterated");
         this.currWeapon++;
         if (this.currWeapon > 4) this.currWeapon = 0;
 

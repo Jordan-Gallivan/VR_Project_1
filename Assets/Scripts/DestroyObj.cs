@@ -6,6 +6,7 @@ using UnityEngine;
 public class DestroyObj : MonoBehaviour
 {
     public GameObject deathSmoke;
+    
     // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,12 +14,13 @@ public class DestroyObj : MonoBehaviour
         {
             GameObject tgt = collision.gameObject;
             tgt.SetActive(false);
-            
+
             //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
             //this.gameObject.GetComponent<MeshCollider>().enabled = false;
+
             
-            
-            
+
+
         }
         
     }
